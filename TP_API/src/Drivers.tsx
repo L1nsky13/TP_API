@@ -70,7 +70,7 @@ function Drivers() {
       {error && <p>Une erreur est survenue : {error}</p>}
       {data && (
         <div>
-          <h1>Voici les pilotes champions du monde :</h1>
+          <h1>Voici les pilotes :</h1>
           <pre>{JSON.stringify(data, null, 2)}</pre>
         </div>
       )}
