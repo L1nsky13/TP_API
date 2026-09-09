@@ -31,12 +31,13 @@ function Drivers() {
 
   useEffect(() => {
     const controller = new AbortController()
+    const opts = {
+      signal: controller.signal,
+    }
 
     async function fetchDrivers() {
       try {
-        const response = await fetch(DRIVERS_URL, {
-          signal: controller.signal,
-        })
+        const response = await fetch(DRIVERS_URL, opts)
 
         if (!response.ok) {
           throw new Error(`Erreur HTTP ${response.status}`)
